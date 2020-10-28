@@ -1,0 +1,8 @@
+db: 
+  host: 'localhost'
+  port: 5555
+  user: 'postgres'
+  password: 'password'
+  database: 'database'
+jwt:
+  secret: 'dqdqwdqw-dqwdqwdqw-qwdqwd-qwdqw'

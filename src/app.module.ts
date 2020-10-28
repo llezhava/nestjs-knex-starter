@@ -1,0 +1,22 @@
+import { Module } from '@nestjs/common';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
+import { UserModule } from './user/user.module';
+import { AuthModule } from './auth/auth.module';
+import { KnexModule } from '@db/knex.module';
+import dbConfig from './config/db';
+
+@Module({
+  imports: [
+    KnexModule.register({
+      client: 'pg',
+      version: '7.2',
+      connection: dbConfig,
+    }),
+    UserModule,
+    AuthModule,
+  ],
+  controllers: [AppController],
+  providers: [AppService],
+})
+export class AppModule {}
